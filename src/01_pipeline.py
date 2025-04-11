@@ -2,7 +2,6 @@ import requests
 from datetime import datetime
 from tinydb import TinyDB
 
-
 def extract_data_bitcoin():
     url = "https://api.coinbase.com/v2/prices/spot"
     response = requests.get(url)
@@ -23,7 +22,6 @@ def transform_data_bitcoin(data):
     }
 
     return  transform_data
-
 
 def save_data_tinydb(data, db_name="bitcoin.json"):
     db = TinyDB(db_name)
